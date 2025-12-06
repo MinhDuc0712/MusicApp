@@ -11,7 +11,7 @@ import artistRouter from "./src/routes/artistRoutes.js";
 // import songRouter from "./src/routes/songRoutes.js";
 
 dotenv.config();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 const swaggerOptions = {
     definition: {
         openapi: "3.0.0",

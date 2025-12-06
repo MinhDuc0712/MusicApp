@@ -34,7 +34,7 @@ Create a `.env` file in the project root with the following variables:
 
 ```
 # Server
-PORT=5000                     # optional; default 5000
+PORT=8080                     # optional; default 8080
 SESSION_SECRET=your_session_secret
 
 # Database
@@ -72,11 +72,13 @@ Notes:
    npm run dev   # dev with nodemon
    npm start     # plain node
    ```
-4. API Docs: Open http://localhost:5000/api-docs
-   - A secondary dev tunnel URL is present in the Swagger config and may be stale: `https://s1v081lr-8080.asse.devtunnels.ms` (TODO: update/remove if not used).
+4. API Docs: Open http://localhost:8080/api-docs
+    - A secondary dev tunnel URL is present in the Swagger config and may be
+      stale: https://s1v081lr-8080.asse.devtunnels.ms/api-docs (TODO: update/remove if not used).
 
 ## API Overview
-Base URL (local): `http://localhost:<PORT>` (default 5000)
+
+Base URL (local): `http://localhost:<PORT>` (default 8080)
 
 - Auth (Google OAuth via Passport)
   - `GET /api/auth/google` — Start Google OAuth
