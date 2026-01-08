@@ -9,22 +9,22 @@ const router = express.Router();
  *   get:
  *     tags:
  *       - Songs
- *     summary: List song
+ *     summary: Danh sách bài hát
  *     parameters:
  *       - in: query
- *         name: search
+ *         name: Tìm kiếm
  *         schema:
  *           type: string
- *         description: Optional case-insensitive name search
+ *         description: Tìm kiếm theo tên
  *     responses:
  *       200:
- *         description: Array of songs
+ *         description: Danh sách bài hát
  *       400:
- *          description: Validation error
+ *          description: Lỗi xác thực
  *   post:
  *     tags:
  *       - Songs
- *     summary: Create song
+ *     summary: Thêm bài hát
  *     requestBody:
  *       required: true
  *       content:
@@ -50,9 +50,9 @@ const router = express.Router();
  *                 type: string
  *     responses:
  *       201:
- *         description: Song created
+ *         description: Bài hát được thêm thành công
  *       400:
- *         description: Validation error
+ *         description: Lỗi xác thực
  */
 router.route("/").get(getSongs).post(createSong);
 
