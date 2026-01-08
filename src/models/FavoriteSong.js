@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const favoriteSongSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true, index: true },
-    song: { type: mongoose.Schema.Types.ObjectId, ref: "Song", required: true, index: true },
+    user: {type: mongoose.Schema.Types.ObjectId, ref: "User", required: true},
+    song: {type: mongoose.Schema.Types.ObjectId, ref: "Song", required: true},
     createdAt: { type: Date, default: Date.now },
 });
 
