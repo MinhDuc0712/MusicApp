@@ -9,6 +9,11 @@ const userSchema = new mongoose.Schema({
         required: false,
         unique: false,
     },
+    role: {
+        type: String,
+        enum: ['user', 'artist'],
+        default: 'user'
+    },
     googleId: {
         type: String,
         unique: true,

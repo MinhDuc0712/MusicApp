@@ -4,13 +4,17 @@ const songSchema = new mongoose.Schema({
     songName: {
         type: String,
         required: true,
+        trim: true,
     },
     artist: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Artist",
         required: true,
     },
     album: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Album",
+        required: true,
     },
     year: {
         type: Number,
@@ -27,3 +31,10 @@ const songSchema = new mongoose.Schema({
         default: Date.now,
     }
 })
+
+songSchema.index(
+    {songName: 1, artist: 1},
+    {unique: true}
+);
+
+export default mongoose.model("Song", songSchema);
