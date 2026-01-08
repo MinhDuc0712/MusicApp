@@ -199,7 +199,7 @@ backend/
 │  └─ routes/
 │     ├─ albumRoutes.js
 │     ├─ artistRoutes.js
-│     ├─ authRoutes.js          # used for both /api/auth and /api/email mounts
+│     ├─ authRoutes.js          
 │     ├─ commentRoutes.js
 │     ├─ favoriteRoutes.js
 │     ├─ followRoutes.js
