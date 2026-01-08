@@ -6,9 +6,15 @@ import passport from "./src/config/passport.js";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
 import authRouter from "./src/routes/authRoutes.js";
-import emailRouter from "./src/routes/emailRoutes.js";
 import artistRouter from "./src/routes/artistRoutes.js";
-// import songRouter from "./src/routes/songRoutes.js";
+import albumRouter from "./src/routes/albumRoutes.js";
+import commentRouter from "./src/routes/commentRoutes.js";
+import favoriteRouter from "./src/routes/favoriteRoutes.js";
+import followRouter from "./src/routes/followRoutes.js";
+import genreRouter from "./src/routes/genreRoutes.js";
+import historyRouter from "./src/routes/historyRoutes.js";
+import playlistRouter from "./src/routes/playlistRoutes.js";
+import songRouter from "./src/routes/songRoutes.js";
 
 dotenv.config();
 const PORT = process.env.PORT;
@@ -49,14 +55,32 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // Route xác thực Google
 app.use("/api/auth", authRouter);
 
-// Route gửi và xác thực OTP qua email
-app.use("/api/email", emailRouter);
-
 // Route quản lý nghệ sĩ
 app.use("/api/artists", artistRouter);
 
+// Route quản lý album
+app.use("/api/albums", albumRouter);
+
+// Route bình luận
+app.use("/api/comments", commentRouter);
+
+// Route bài hát yêu thích
+app.use("/api/favorites", favoriteRouter);
+
+// Route theo dõi
+app.use("/api/follows", followRouter);
+
+// Route thể loại
+app.use("/api/genres", genreRouter);
+
+// Route lịch sử nghe
+app.use("/api/history", historyRouter);
+
+// Route playlist
+app.use("/api/playlists", playlistRouter);
+
 // Route quản lý bài hát
-// app.use("/api/songs", songRouter);
+app.use("/api/songs", songRouter);
 
 connectDB().then(() => {
     app.listen(PORT, () => {

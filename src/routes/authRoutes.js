@@ -7,7 +7,7 @@ const router = express.Router();
 
 /**
  * @openapi
- * /api/email/send-otp:
+ * /api/auth/send-otp:
  *   post:
  *     tags:
  *       - Auth
@@ -34,7 +34,7 @@ router.post("/send-otp", sendOtp);
 
 /**
  * @openapi
- * /api/email/verify-otp:
+ * /api/auth/verify-otp:
  *   post:
  *     tags:
  *       - Auth
