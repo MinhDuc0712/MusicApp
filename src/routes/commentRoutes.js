@@ -14,7 +14,7 @@ const router = express.Router();
  *   get:
  *     tags:
  *       - Comments
- *     summary: Get comments by song id
+ *     summary: Tìm kiếm comment theo id bài hát
  *     parameters:
  *       - in: path
  *         name: songId
@@ -23,13 +23,13 @@ const router = express.Router();
  *           type: string
  *     responses:
  *       200:
- *         description: Array of comments
+ *         description: Danh sách đánh giá
  *       400:
- *         description: Validation error
+ *         description: Lỗi xác thực
  *   post:
  *     tags:
  *       - Comments
- *     summary: Create comment
+ *     summary: Tạo đánh giá mới
  *     requestBody:
  *       required: true
  *       content:
@@ -46,9 +46,9 @@ const router = express.Router();
  *                 type: string
  *     responses:
  *       201:
- *         description: Comment created
+ *         description: Đánh giá đã được tạo
  *       400:
- *         description: Validation error
+ *         description: Lỗi xác thực
  *
  */
 router.route("/:songId").get(getCommentsBySong).post(createComment);
