@@ -11,7 +11,7 @@ const router = express.Router();
  *   post:
  *     tags:
  *       - Auth
- *     summary: Send OTP to email
+ *     summary: Gửi mã OTP về Email
  *     requestBody:
  *       required: true
  *       content:
@@ -26,9 +26,9 @@ const router = express.Router();
  *                 format: email
  *     responses:
  *       200:
- *         description: OTP sent successfully
+ *         description: OTP đã được gửi thành công
  *       400:
- *         description: Missing email or validation error
+ *         description: Không đúng email hoặc lỗi xác thực
  */
 router.post("/send-otp", sendOtp);
 
@@ -38,7 +38,7 @@ router.post("/send-otp", sendOtp);
  *   post:
  *     tags:
  *       - Auth
- *     summary: Verify OTP and return token
+ *     summary: Kiểm tra OTP và trả về token JWT
  *     requestBody:
  *       required: true
  *       content:
@@ -56,9 +56,9 @@ router.post("/send-otp", sendOtp);
  *                 type: string
  *     responses:
  *       200:
- *         description: OTP valid, token returned
+ *         description: OTP hợp lệ, trả về token JWT
  *       400:
- *         description: Invalid OTP or expired
+ *         description: OTP không hợp lệ hoặc OTP hết hạn
  */
 router.post("/verify-otp", verifyOtp);
 
