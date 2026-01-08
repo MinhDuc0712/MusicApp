@@ -16,22 +16,22 @@ const router = express.Router();
  *   get:
  *     tags:
  *       - Artists
- *     summary: List artists
+ *     summary: Danh sách nghệ sĩ
  *     parameters:
  *       - in: query
- *         name: search
+ *         name: Tìm kiếm
  *         schema:
  *           type: string
- *         description: Optional case-insensitive name search
+ *         description: Tìm kiếm theo tên
  *     responses:
  *       200:
- *         description: Array of artists
+ *         description: Danh sách nghệ sĩ
  *       400:
- *         description: Validation error
+ *         description: Lỗi xác thực
  *   post:
  *     tags:
  *       - Artists
- *     summary: Create artist
+ *     summary: Tạo nghệ sĩ
  *     requestBody:
  *       required: true
  *       content:
@@ -62,9 +62,9 @@ const router = express.Router();
  *                     type: string
  *     responses:
  *       201:
- *         description: Artist created
+ *         description: Nghệ sĩ đã được tạo
  *       400:
- *         description: Validation error
+ *         description: Lỗi xác thực
  */
 router.route("/")
     .get(getArtists)
@@ -79,20 +79,20 @@ router.route("/")
  *       required: true
  *       schema:
  *         type: string
- *       description: Artist MongoDB id
+ *       description: ID nghệ sĩ
  *   get:
  *     tags:
  *       - Artists
- *     summary: Get artist by id
+ *     summary: Tìm nghệ sĩ theo id
  *     responses:
  *       200:
- *         description: Artist document
+ *         description: Tìm thấy nghệ sĩ theo ID
  *       404:
- *         description: Artist not found
+ *         description: Không tìm thấy nghệ sĩ
  *   put:
  *     tags:
  *       - Artists
- *     summary: Update artist
+ *     summary: Cập nhật thông tin nghệ sĩ
  *     requestBody:
  *       required: true
  *       content:
@@ -123,20 +123,20 @@ router.route("/")
  *                     type: string
  *     responses:
  *       200:
- *         description: Updated artist
+ *         description: Cập nhật thành công
  *       400:
- *         description: Validation error
+ *         description: Lỗi xác thực
  *       404:
- *         description: Artist not found
+ *         description: Không tìm thấy nghệ sĩ nào
  *   delete:
  *     tags:
  *       - Artists
- *     summary: Delete artist
+ *     summary: Xóa thông tin nghệ sĩ
  *     responses:
  *       200:
- *         description: Deletion success message
+ *         description: Xóa thành công
  *       404:
- *         description: Artist not found
+ *         description: Không tìm thấy nghệ sĩ nào
  */
 router.route("/:id")
     .get(getArtistById)
